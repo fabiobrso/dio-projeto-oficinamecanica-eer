@@ -1,8 +1,11 @@
-#  Sistema de Oficina Mecânica - Modelo Conceitual
+#  Projeto EER para Oficina Mecânica - Modelo Conceitual
+**Modelo conceitual de banco de dados para um sistema de Oficina Mecânica.**
 
-##  Descrição do Projeto
-Este projeto consiste na **modelagem conceitual de um sistema de controle de ordens de serviço (OS)** para uma oficina mecânica.  
-O esquema foi desenvolvido no **MySQL Workbench** a partir da narrativa proposta no desafio, visando representar clientes, veículos, equipes de mecânicos, ordens de serviço, serviços e peças utilizadas.
+---
+
+##  Sobre o Projeto
+Este projeto consiste na **modelagem conceitual de um sistema de controle de Ordens de Serviço (OS)** para uma oficina mecânica.  
+O esquema foi desenvolvido no **MySQL Workbench** a partir da narrativa proposta no desafio da plataforma DIO, visando representar clientes, veículos, equipes de mecânicos, ordens de serviço, serviços e peças utilizadas.
 
 ---
 
@@ -17,63 +20,65 @@ O esquema foi desenvolvido no **MySQL Workbench** a partir da narrativa proposta
 
 ---
 
-## Entidades e Atributos
+## 🎯 Modelagem do Projeto
 
-### **Cliente**
-- idCliente (PK)  
-- nome  
-- endereço  
-- telefone  
+### Entidades e Atributos
 
-### **Veículo**
-- idVeiculo (PK)  
-- placa  
-- modelo  
-- ano  
-- idCliente (FK)  
+- **Cliente**
+  - idCliente (PK)  
+  - nome  
+  - endereço  
+  - telefone  
 
-### **Mecânico**
-- idMecanico (PK)  
-- nome  
-- endereço  
-- especialidade  
+- **Veículo**
+  - idVeiculo (PK)  
+  - placa  
+  - modelo  
+  - ano  
+  - idCliente (FK)  
 
-### **Equipe**
-- idEquipe (PK)  
-- nome_equipe  
+- **Mecânico**
+  - idMecanico (PK)  
+  - nome  
+  - endereço  
+  - especialidade  
 
-### **Equipe/Mecanico** (associativa)
-- idEquipe (FK)  
-- idMecanico (FK)  
+- **Equipe**
+  - idEquipe (PK)  
+  - nome_equipe  
 
-### **Serviço**
-- idServico (PK)  
-- descricao  
-- valor_mao_obra  
+- **Equipe/Mecanico** (associativa)
+  - idEquipe (FK)  
+  - idMecanico (FK)  
 
-### **Peça**
-- idPeca (PK)  
-- descricao  
-- valor_unitario  
+- **Serviço**
+  - idServico (PK)  
+  - descricao  
+  - valor_mao_obra  
 
-### **Ordem Servico (OS)**
-- idOs (PK)  
-- data_emissao  
-- data_conclusao  
-- valor_total  
-- status  
-- idVeiculo (FK)  
-- idEquipe (FK)  
+- **Peça**
+  - idPeca (PK)  
+  - descricao  
+  - valor_unitario  
 
-### **OS Servico** (associativa)
-- idOs (FK)  
-- idServico (FK)  
-- quantidade  
+- **Ordem Servico (OS)**
+  - idOs (PK)  
+  - data_emissao  
+  - data_conclusao  
+  - valor_total  
+  - status  
+  - idVeiculo (FK)  
+  - idEquipe (FK)  
 
-### **OS Peca** (associativa)
-- idOs (FK)  
-- idPeca (FK)  
-- quantidade  
+- **OS Servico** (associativa)
+  - idOs (FK)  
+  - idServico (FK)  
+  - quantidade  
+
+- **OS Peca** (associativa)
+  - idOs (FK)  
+  - idPeca (FK)  
+  - quantidade  
 
 ---
 
@@ -87,7 +92,7 @@ O esquema foi desenvolvido no **MySQL Workbench** a partir da narrativa proposta
 
 ---
 
-## ⚠️ Observações e Insights
+## 🔑 Pontos de Destaque
 Alguns pontos não estavam explícitos na narrativa e foram definidos por interpretação lógica:  
 - Foi adotado que Cliente pode possuir **vários veículos**.  
 - Para Ordem de Serviço foi considerado que pode se ter **vários serviços e várias peças**.  
@@ -95,6 +100,12 @@ Alguns pontos não estavam explícitos na narrativa e foram definidos por interp
 - Para o valor total da OS deve ser calculado a partir da soma de serviços + peças.  
 
 ---  
+
+## 🛠️ Ferramentas Utilizadas
+- **MySQL Workbench** → modelagem conceitual e refinamento do diagrama.  
+- **MySQL** → implementação das tabelas e constraints.  
+
+---
 
 ## 📂 Estrutura do Repositório
 📦  dio-projeto-oficinamecanica-eer    
@@ -106,5 +117,6 @@ Alguns pontos não estavam explícitos na narrativa e foram definidos por interp
 
 ## 📝 Autor
 Desenvolvido por **Fábio Barros de Oliveira** para o desafio DIO.
+
 
 *📌 Projeto criado para fins educacionais e para compor o portfólio de modelagem de banco de dados.*
