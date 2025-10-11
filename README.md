@@ -108,15 +108,14 @@ Alguns pontos não estavam explícitos na narrativa e foram definidos por interp
 ---
 
 ## 📂 Estrutura do Repositório
-📦  dio-projeto-oficinamecanica-eer    
-├─ model/   
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── modelo_oficina.mwb # **arquivo do Workbench**   
-├── docs/  
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── diagrama_oficina.png # **imagem do modelo conceitual**    
-└── README.md  
+📦 dio-projeto-ecommerce-eer   
+┣ README.md  
+┣ diagrama_oficina_img.png **# Diagrama EER exportado**   
+┗ diagrama_oficina.mwb **# Arquivo nativo do MySQL Workbench**  
 
 ## 📝 Autor
 Desenvolvido por **Fábio Barros de Oliveira** para o desafio DIO.
 
 
 *📌 Projeto criado para fins educacionais e para compor o portfólio de modelagem de banco de dados.*
+
